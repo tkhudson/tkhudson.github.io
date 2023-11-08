@@ -16,7 +16,7 @@ dark-theme: true
 
 resume: true
 resume-external: true
-resume-url: file:///C:/Users/tyler/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IA5UNLCF/tylerhudson_resume_4.pdf
+resume-url: tkhudson.github.io\assets\images\tylerhudson_resume_4.pdf
 
 url: https://tylerkhudson.com/
 
@@ -52,7 +52,7 @@ authors:
 width: normal
 
 # if you don't need projects, comment the *projects* configs below
-projects: true
+# projects: true
 
 # if you don't need "about" or "blog", comment them out below
 about: true
