@@ -3,13 +3,15 @@ title: "Docker with Website"
 layout: post
 date: 2023-11-08 20:52
 image: /assets/images/markdown.jpg
-headerImage: false
+headerImage: true
+projects: true
+hidden: false
 tag:
 - project
 - docker
-category: projects
+category: project
 author: Tyler
-description: Project for containerized my website.
+description: "Project for containerized my website."
 ---
 
 ## Summary:
