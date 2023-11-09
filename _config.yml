@@ -41,7 +41,7 @@ email: tylerkhudson@gmail.com
 authors:
   Tyler:
     name: Tyler
-    bio: A Man who travels the world eating noodles
+    bio: 
     external-image: false
     picture: https://avatars.githubusercontent.com/u/105871355?v=4
     twitter: tyler-k-hudson
@@ -52,7 +52,7 @@ authors:
 width: normal
 
 # if you don't need projects, comment the *projects* configs below
-# projects: true
+projects: true
 
 # if you don't need "about" or "blog", comment them out below
 about: true
