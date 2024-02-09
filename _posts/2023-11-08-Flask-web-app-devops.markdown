@@ -14,6 +14,7 @@ tag:
 - devops
 - ci/cd
 - jenkins
+- terraform
 - git
 - azure
 category: project
@@ -34,5 +35,6 @@ Tools the project will use (not limited... may change):
 - Docker
 - Kubernetes
 - Azure
+- Terraform
 
 I am hoping this helps demonstrate my knowledge over DevOps practices.
