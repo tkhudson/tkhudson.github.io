@@ -29,7 +29,7 @@ Tools the project will use (not limited... may change):
 - Git
 - Github
 - Flask
-- - - Python, HTML, CSS
+    - Python, HTML, CSS
 - Jenkins
 - Docker
 - Kubernetes
