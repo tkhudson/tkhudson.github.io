@@ -12,6 +12,7 @@ tag:
 - devops
 - ci/cd
 - jenkins
+- terraform
 - git
 - azure
 category: blog
@@ -27,7 +28,7 @@ Come ride out the journey with me! I appreciate you stopping by and I will be po
 
 ## The Plan
 
-I will develop a web app with Flask, a web framework for Python, using HTML and CSS (some python as well of course). I will be implementing a CI/CD (Continuous Integration/Continuous Deployment) process with Jenkins for deploying the Flask web app to a Kubernetes cluster as well.
+I will develop a web app with Flask, a web framework for Python, using HTML and CSS (some python as well of course). I will be implementing a CI/CD (Continuous Integration/Continuous Deployment) process with Jenkins for deploying the Flask web app to a Kubernetes cluster. I plan on deploying and hosting in Azure, using Terraform.
 
 Tools the project will use (not limited... may change):
 - Git
@@ -38,6 +39,7 @@ Tools the project will use (not limited... may change):
 - Docker
 - Kubernetes
 - Azure
+- Terraform
 
 I am hoping this helps demonstrate my knowledge over DevOps practices.
 
