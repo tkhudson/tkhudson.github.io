@@ -1,32 +1,52 @@
 ---
-title: "Azure Compute Services"
+title: "A big project coming soon!"
 layout: post
 date: 2023-11-20 14:05 
 image: /assets/images/ #image.jpg
 headerImage: false
 tag:
-- Azure
-- Compute Services
+- project
+- docker
+- kubernetes
+- flask
+- devops
+- ci/cd
+- jenkins
+- git
+- azure
 category: blog
 author: Tyler
-description: Virtual machines, vm scale sets, functions, app service, and more!
+description: An intro into a project I will be working on.
 ---
 
-## Summary:
+## Flask Web app that utilizes DevOps tools and practices:
 
-Azure offers various services. A main one is their compute services. These include virtual machines, containerization, app service, and more.
+This project in planning/testing phase at the moment. You can find another page on the channel I will update which is the Projects page. However, here in the blog area, I will give updates as well. Anyways I have a project up my sleeve that I am working on building out and below is some info I have so far.
 
-## Virtual Machines:
+Come ride out the journey with me! I appreciate you stopping by and I will be posting on my LinkedIn as well!
 
-## Virtual Machine Scale Sets:
+## The Plan
 
-## Azure Container Instances:
+I will develop a web app with Flask, a web framework for Python, using HTML and CSS (some python as well of course). I will be implementing a CI/CD (Continuous Integration/Continuous Deployment) process with Jenkins for deploying the Flask web app to a Kubernetes cluster as well.
 
-## Azure Kubernetes Service:
+Tools the project will use (not limited... may change):
+- Git
+- Github
+- Flask
+- - - Python, HTML, CSS
+- Jenkins
+- Docker
+- Kubernetes
+- Azure
 
-## Azure App Service:
+I am hoping this helps demonstrate my knowledge over DevOps practices.
 
-## Azure Functions:
+## Signing Off
+
+Thank you all.
+
+Best regards,
+Tyler
 
 --- 
 
