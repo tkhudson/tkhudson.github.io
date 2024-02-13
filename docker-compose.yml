@@ -2,7 +2,7 @@
 
 services:
   jekyll:
-    image: bretfisher/jekyll-serve
+    image: tylerkhudson/jekyll-serve
     volumes:
       - .:/site
     ports:
