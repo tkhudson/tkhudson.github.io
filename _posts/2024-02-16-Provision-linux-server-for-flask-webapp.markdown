@@ -37,21 +37,21 @@ Use a terminal (for Linux) or Remote Desktop Connection (for Windows) to establi
 #Install Python
 Update the package repository (for Linux):
 
-```
+```bash
 sudo apt update   # for Ubuntu/Debian
 sudo yum update   # for CentOS/RHEL
 ```
 
 Install Python (version 3.x):
 
-```
+```bash
 sudo apt install python3   # for Ubuntu/Debian
 sudo yum install python3   # for CentOS/RHEL
 ```
 
 Verify the installation:
 
-```
+```bash
 python3 --version
 ```
 
@@ -59,21 +59,21 @@ python3 --version
 
 Pip is a package manager for Python that allows you to install additional libraries and dependencies.
 
-```
+```bash
 sudo apt install python3-pip   # for Ubuntu/Debian
 sudo yum install python3-pip   # for CentOS/RHEL
 ```
 
 Verify the installation:
 
-```
+```bash
 pip3 --version
 ```
 
 # Install Flask:
 Use pip to install Flask, the Python web framework:
 
-```
+```bash
 pip3 install Flask
 ```
 
@@ -83,7 +83,7 @@ Depending on the requirements of your Flask web application, you may need to ins
 
 # Copy Your Flask Application Code:
 
-    Copy your Flask application code to the virtual machine. You can use SCP (for Linux) or FileZilla (for Windows) to transfer files between your local machine and the virtual machine.
+Copy your Flask application code to the virtual machine. You can use SCP (for Linux) or FileZilla (for Windows) to transfer files between your local machine and the virtual machine.
 
 # Configure Your Flask Application:
 Modify any configuration files (e.g., config.py) as necessary to specify settings such as database connection strings, application secret keys, and other parameters.
@@ -93,7 +93,7 @@ Modify any configuration files (e.g., config.py) as necessary to specify setting
 Navigate to the directory containing your Flask application code.
 Use the flask run command to start the Flask development server:
 
-```
+```bash
 flask run --host=0.0.0.0
 ```
 
