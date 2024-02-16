@@ -1,5 +1,5 @@
 ---
-title: "Web App Infrastructure as Code (IaC)"
+title: "How to provision a linux server/vm for hosting a flask web app"
 layout: post
 date: 2024-2-13 09:09
 image: /assets/images/WebsiteImages.jpg
@@ -16,7 +16,7 @@ tag:
 - azure
 category: blog
 author: Tyler
-description: "Utilizing IaC for deploying Web App to Azure"
+description: "Use a linux vm to host your Flask web app."
 ---
 
 # Purpose
