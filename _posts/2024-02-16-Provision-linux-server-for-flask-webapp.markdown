@@ -1,7 +1,7 @@
 ---
 title: "How to provision a linux server/vm for hosting a flask web app"
 layout: post
-date: 2024-2-13 09:09
+date: 2024-2-16 09:30
 image: /assets/images/WebsiteImages.jpg
 headerImage: false
 projects: true
@@ -117,3 +117,20 @@ Thank you all.
 
 Best regards,
 Tyler
+
+---
+
+Connect with me on YouTube or just consider subscribing! Thanks!
+
+**Check out my YouTube!**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RELH4x4U0I8?si=Tivd8tWsXt22hPzn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="747" height="420" src="https://www.youtube.com/embed/VRXHawfSMuM" title="The Shared Responsibility Model Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[1]: https://daringfireball.net/projects/markdown/
+[2]: https://www.fileformat.info/info/unicode/char/2163/index.htm
+[3]: https://www.markitdown.net/
+[4]: https://daringfireball.net/projects/markdown/basics
+[5]: https://daringfireball.net/projects/markdown/syntax
+[6]: https://kune.fr/wp-content/uploads/2013/10/ghost-blog.jpg
