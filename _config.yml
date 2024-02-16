@@ -12,7 +12,7 @@ picture: https://avatars.githubusercontent.com/u/105871355?s=400&u=461c65b3cc190
 
 # your site color theme, true for dark theme, 
 # false to light theme, auto to switch with system.
-dark-theme: false
+dark-theme: true
 
 resume: true
 resume-external: true
