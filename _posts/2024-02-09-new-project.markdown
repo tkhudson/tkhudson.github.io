@@ -5,7 +5,6 @@ date: 2024-02-09 05:40
 image: /assets/images/ #image.jpg
 headerImage: false
 tag:
-- project
 - docker
 - kubernetes
 - flask

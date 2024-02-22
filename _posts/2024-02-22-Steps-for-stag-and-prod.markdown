@@ -1,7 +1,7 @@
 ---
-title: "How to provision a linux server/vm for hosting a flask web app"
+title: "Plan for hosting the Flask web app"
 layout: post
-date: 2024-2-16 09:30
+date: 2024-2-22 05:27
 image: /assets/images/WebsiteImages.jpg
 headerImage: false
 projects: true
@@ -13,19 +13,36 @@ tag:
 - terraform
 - git
 - azure
+- Apache
+- Nginx
 category: blog
 author: Tyler
-description: "Use a linux vm to host your Flask web app."
+description: "Setting up staging and production enviornments."
 ---
 
 # Purpose
-The purpose for this article is to inform anyone who finds themselves setting up a Flask web app on a linux server. I have developed a basic web app using HTML5 and CSS. If you haven't heard of Flask, it is a scalable, flexible, and light framework for Python. I am hosting my web app in Azure using a linux VM. The steps below help you provision a linux server to host said application.
+The purpose for this article is to inform anyone who is looking to setup staging and production enviornmnets for a web app. In this case I will be pu-- STILL EDITING POST
 
 # Prerequisites
-- Linux VM
-  - Any infrastructure needed for the VM.
-- Networking settings for VM (be able to connect)
-- SSH key pair
+steps to host a Flask app on a Linux VM in Azure for staging and production environments:
+
+Create a Linux VM in Azure:
+You can create a Linux VM in Azure using the Azure portal1 or the Azure CLI1. This involves specifying details like the subscription, resource group, VM name, image, size, and authentication method1.
+
+Connect to the VM:
+The most common method for accessing the VM is through the Secure Shell Protocol (SSH)1. You can use any standard SSH client commonly found in Linux and Windows, or you can use Azure Cloud Shell from any browser1.
+
+Clone Your Flask Application:
+If you already have a Flask project on a Git Repository, clone your application into the VM2.
+Install Python and Flask: You’ll need to install Python and Flask on your VM. You can do this using the package manager of your Linux distribution2.
+
+Configure the Application for Staging and Production:
+You’ll need to configure your Flask application for both staging and production environments. This typically involves setting environment variables, configuring the database, and setting up any other services your application depends on3.
+
+Run the Application: You can run your Flask application using a WSGI server like Gunicorn or uWSGI3. For production environments, you’ll also want to set up a reverse proxy like Nginx or Apache to handle static files and manage connections3.
+
+Automate Deployment:
+For a smooth CI/CD pipeline, you might want to automate the deployment process. This could involve setting up a Jenkins server, or using a service like Azure Pipelines3.
 
 
 # Connecting

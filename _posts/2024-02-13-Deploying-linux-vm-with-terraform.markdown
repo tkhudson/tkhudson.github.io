@@ -7,7 +7,6 @@ headerImage: false
 projects: true
 hidden: false
 tag:
-- project
 - flask
 - devops
 - ci/cd
