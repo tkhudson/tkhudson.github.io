@@ -4,7 +4,7 @@ layout: post
 date: 2024-08-21 10:31
 image: /assets/images/WebsiteImages.jpg
 headerImage: false
-projects: false
+projects: true
 hidden: false
 tag:
 - git
