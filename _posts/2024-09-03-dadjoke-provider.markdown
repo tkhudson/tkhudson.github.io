@@ -30,6 +30,7 @@ description: "In this project, we've built a Dad Joke Provider application using
    - Minikube for local Kubernetes cluster
 
 ## Project Structure
+Repo: https://github.com/tkhudson/dadjoke-provider-a-kubernetes-microservices-project
 ```
 dadjoke-provider/
 │
