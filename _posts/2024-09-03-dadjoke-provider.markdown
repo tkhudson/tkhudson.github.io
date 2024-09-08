@@ -102,7 +102,7 @@ By building this Dad Joke Provider, we've not only created a fun application but
 
 ## Signing Off
 
-Building a secure, real-time messaging app involves careful planning and execution. With a solid tech stack and a focus on security, our project is on track to deliver a high-quality solution for effective and safe user communication.
+I hope you enjoyed this project and found it informative. If you have any questions or feedback, please don't hesitate to reach out.
 
 Thank you all and best regards,
 
