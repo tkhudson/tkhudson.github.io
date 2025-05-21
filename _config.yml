@@ -1,6 +1,6 @@
 # main text of home
 title: Tyler Hudson
-bio: DevSecOps | Game Dev | FullStack
+bio: Cybersecurity | Cloud | FullStack
 
 # twitter summary info
 description: Blog/Portfolio website showing my thoughts and what I'm working on.
@@ -16,7 +16,7 @@ dark-theme: false
 
 resume: true
 resume-external: true
-resume-url: tkhudson.github.io\assets\ThudsonSys-1.pdf
+resume-url: tkhudson.github.io\assets\thudson_resume_2025.pdf
 url: https://tylerkhudson.com/
 
 permalink: /:title/
