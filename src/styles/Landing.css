@@ -1,0 +1,105 @@
+/* Landing Page Styles */
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero {
+  margin-bottom: 60px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.sections {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  width: 300px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.section-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tyler-card:hover {
+  background: rgba(0, 255, 0, 0.2);
+}
+
+.persevus-card:hover {
+  background: rgba(255, 69, 0, 0.2);
+}
+
+.serviam-card:hover {
+  background: rgba(255, 215, 0, 0.2);
+}
+
+.card-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .sections {
+    gap: 20px;
+  }
+  .section-card {
+    width: 250px;
+    padding: 20px;
+  }
+}
