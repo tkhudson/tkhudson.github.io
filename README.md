@@ -39,6 +39,8 @@ npm run preview
 
 This project uses GitHub Actions for automatic deployment to GitHub Pages. Simply push changes to the `main` branch and the site will be automatically built and deployed.
 
+**Latest Update:** Testing deployment after GitHub Pages configuration.
+
 ### Manual Deployment (if needed)
 
 ```bash
