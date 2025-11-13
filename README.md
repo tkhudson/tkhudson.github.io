@@ -1,16 +1,65 @@
-# React + Vite
+# Tyler Hudson Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, multi-themed React portfolio website showcasing three distinct personas:
 
-Currently, two official plugins are available:
+- **Tyler Hudson**: Tech-focused section with matrix-inspired design
+- **Persevus**: Gaming content creator with post-apocalyptic battlefield theme
+- **Serviam**: Christian ministry content with crusader/templar styling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Clean, animated React interface built with Vite
+- Responsive design with Tailwind CSS
+- Framer Motion animations
+- Multi-themed sections with distinct visual identities
+- Automatic deployment to GitHub Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Development
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 18+
+- npm
+
+### Setup
+
+```bash
+npm install
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deployment
+
+This project uses GitHub Actions for automatic deployment to GitHub Pages. Simply push changes to the `main` branch and the site will be automatically built and deployed.
+
+### Manual Deployment (if needed)
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Landing.jsx          # Main landing page with section selection
+│   ├── TylerHudson.jsx      # Tech portfolio section
+│   ├── Persevus.jsx         # Gaming content section
+│   └── Serviam.jsx          # Ministry content section
+├── styles/
+│   ├── Landing.css
+│   ├── TylerHudson.css
+│   ├── Persevus.css
+│   └── Serviam.css
+└── App.jsx                  # Main app with routing
+```
