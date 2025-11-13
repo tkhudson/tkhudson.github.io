@@ -6,11 +6,13 @@ interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  id?: string;
 }
 
-const AnimatedSection = ({ children, className = '', delay = 0 }: AnimatedSectionProps) => {
+const AnimatedSection = ({ children, className = '', delay = 0, id }: AnimatedSectionProps) => {
   return (
     <motion.section
+      id={id}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
