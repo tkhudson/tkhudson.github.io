@@ -1,10 +1,12 @@
 /* Tyler Hudson - Matrix Theme */
 .tyler-hudson {
   min-height: 100vh;
+  width: 100%;
   background: #000;
   color: #00ff00;
   font-family: 'Courier New', monospace;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .header {
@@ -23,14 +25,12 @@
 }
 
 .back-link:hover {
-  text-shadow: 0 0 10px #00ff00;
+  opacity: 0.8;
 }
 
 .header h1 {
   font-size: 3rem;
   margin: 10px 0;
-  text-shadow: 0 0 20px #00ff00;
-  animation: matrixGlow 2s ease-in-out infinite alternate;
 }
 
 .header p {
@@ -55,7 +55,6 @@
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-  text-shadow: 0 0 10px #00ff00;
 }
 
 .content p {
@@ -80,7 +79,6 @@
 
 .project-card:hover, .article-item:hover, .content-item:hover {
   background: rgba(0, 255, 0, 0.2);
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
   transform: translateY(-5px);
 }
 
@@ -109,7 +107,6 @@
 .platform-link:hover {
   background: #00ff00;
   color: #000;
-  box-shadow: 0 0 15px #00ff00;
 }
 
 .resume a {
@@ -126,16 +123,6 @@
 .resume a:hover {
   background: #00ff00;
   color: #000;
-  box-shadow: 0 0 20px #00ff00;
-}
-
-@keyframes matrixGlow {
-  from {
-    text-shadow: 0 0 20px #00ff00;
-  }
-  to {
-    text-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
-  }
 }
 
 @media (max-width: 768px) {
