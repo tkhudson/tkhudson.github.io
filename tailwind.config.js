@@ -11,6 +11,7 @@ export default {
         tech: ['Fira Code', 'monospace'],
         gaming: ['Rajdhani', 'sans-serif'],
         ministry: ['Cinzel', 'serif'],
+        orbitron: ['Orbitron', 'sans-serif'],
       },
       colors: {
         // Global dark theme
@@ -31,6 +32,13 @@ export default {
           bg: '#1A1A1A',
           accent: '#8B6914',
           secondary: '#9B1D1D',
+        },
+        persevus: {
+          bg: '#2D1B0B',
+          accent: '#B8471A',
+          dust: '#D4A574',
+          metal: '#4A4A4A',
+          smoke: '#2D1B0B',
         },
       },
       animation: {

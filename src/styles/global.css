@@ -60,3 +60,9 @@ body {
   --bg: #1A1A1A;
   --accent: #8B6914;
 }
+
+.theme-persevus {
+  --bg-primary: #2D1B0B;
+  --accent: #B8471A;
+  --dust: #D4A574;
+}
