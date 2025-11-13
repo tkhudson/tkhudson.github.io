@@ -11,6 +11,7 @@ export default {
         tech: ['Fira Code', 'monospace'],
         gaming: ['Rajdhani', 'sans-serif'],
         ministry: ['Cinzel', 'serif'],
+        body: ['Cormorant Garamond', 'serif'],
         orbitron: ['Orbitron', 'sans-serif'],
       },
       colors: {
@@ -40,6 +41,7 @@ export default {
           metal: '#4A4A4A',
           smoke: '#2D1B0B',
         },
+        parchment: '#E3DABF',
       },
       animation: {
         'glitch': 'glitch 0.3s ease-in-out',

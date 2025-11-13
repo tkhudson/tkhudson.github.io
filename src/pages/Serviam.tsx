@@ -1,291 +1,319 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import AnimatedSection from '../components/AnimatedSection';
-import { flameVariants } from '../utils/animationVariants';
+import { useLocation } from 'react-router-dom';
+import MotivationGrid from '../components/MotivationGrid';
+import PodcastCarousel from '../components/PodcastCarousel';
+import ChallengesGrid from '../components/ChallengesGrid';
+import { bannerUnfurlVariants, torchIgniteVariants, itemVariants, stoneParallaxVariants } from '../utils/animationVariants';
 
 const Serviam = () => {
-  const reflections = [
-    {
-      title: 'The Call to Biblical Masculinity',
-      date: '2025-01-10',
-      excerpt: 'Understanding our role as men in God\'s kingdom through scripture and tradition...',
-      scripture: 'Ephesians 5:25',
-    },
-    {
-      title: 'Spiritual Warfare in the Modern Age',
-      date: '2024-12-28',
-      excerpt: 'Equipping ourselves for battle against the forces of darkness in contemporary society...',
-      scripture: 'Ephesians 6:12',
-    },
-    {
-      title: 'The Power of Prayer and Fasting',
-      date: '2024-12-15',
-      excerpt: 'Rediscovering ancient spiritual disciplines for spiritual breakthrough...',
-      scripture: 'Matthew 17:21',
-    },
-    {
-      title: 'Leading with Servant Heart',
-      date: '2024-12-01',
-      excerpt: 'Christ\'s model of leadership through humility and service...',
-      scripture: 'Mark 10:45',
-    },
-  ];
+  const location = useLocation();
 
-  const challenges = [
-    {
-      title: '30-Day Prayer Challenge',
-      description: 'Commit to daily prayer and scripture reading for spiritual growth.',
-      duration: '30 days',
-      difficulty: 'Beginner',
-    },
-    {
-      title: 'Fasting for Breakthrough',
-      description: 'A guided fast focusing on spiritual renewal and clarity.',
-      duration: '21 days',
-      difficulty: 'Intermediate',
-    },
-    {
-      title: 'Biblical Masculinity Study',
-      description: 'Deep dive into scripture on godly manhood and leadership.',
-      duration: '40 days',
-      difficulty: 'Advanced',
-    },
-  ];
-
-  const media = [
-    {
-      title: 'The Armor of God',
-      type: 'Sermon',
-      description: 'Understanding spiritual warfare and divine protection.',
-      url: 'https://youtube.com/watch?v=armor',
-      duration: '45:23',
-    },
-    {
-      title: 'Walking in Purity',
-      type: 'Teaching',
-      description: 'Maintaining holiness in a corrupt world.',
-      url: 'https://youtube.com/watch?v=purity',
-      duration: '38:17',
-    },
-    {
-      title: 'The Heart of a Warrior',
-      type: 'Podcast',
-      description: 'Discussion on courage, faith, and spiritual battle.',
-      url: 'https://youtube.com/watch?v=warrior',
-      duration: '52:41',
-    },
-  ];
+  useEffect(() => {
+    // Apply theme class to body for global styling
+    document.body.classList.add('theme-serviam');
+    return () => {
+      document.body.classList.remove('theme-serviam');
+    };
+  }, [location]);
 
   return (
-    <div className="min-h-screen bg-ministry-bg text-white">
-      {/* Crusader background texture */}
-      <div className="fixed inset-0 opacity-15">
+    <div className="min-h-screen bg-primary text-white overflow-x-hidden">
+      {/* Parallax Castle Background */}
+      <div className="fixed inset-0">
+        {/* Stone texture background */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-ministry-accent/20 via-transparent to-ministry-secondary/30"
+          className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='crosses' width='120' height='120' patternUnits='userSpaceOnUse'%3E%3Crect width='120' height='120' fill='%231A1A1A'/%3E%3Cg fill='%238B6914' opacity='0.3'%3E%3Crect x='55' y='50' width='10' height='20'/%3E%3Crect x='50' y='55' width='20' height='10'/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23crosses)'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238B6914' fill-opacity='0.1'%3E%3Cpath d='M50 50c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '100px 100px'
           }}
-        ></div>
+        />
+
+        {/* Torch-lit stone walls */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900"
+          variants={stoneParallaxVariants}
+          animate="parallax"
+        />
+
+        {/* Glowing scripture overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-1/4 text-6xl font-ministry text-accent transform -rotate-12">
+            SERVIAM
+          </div>
+          <div className="absolute bottom-1/4 right-1/4 text-4xl font-ministry text-accent transform rotate-12">
+            FERRO
+          </div>
+        </div>
       </div>
 
-      <div className="relative z-10 pt-20">
+      <div className="relative z-10">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center px-4">
-          <div className="text-center">
+        <section className="min-h-screen flex items-center justify-center px-4 relative">
+          {/* Torch particles */}
+          <motion.div
+            className="absolute top-20 left-20 w-4 h-4 bg-accent rounded-full"
+            variants={torchIgniteVariants}
+            animate="ignite"
+          />
+          <motion.div
+            className="absolute top-32 right-32 w-3 h-3 bg-accent rounded-full"
+            variants={torchIgniteVariants}
+            animate="ignite"
+            style={{ animationDelay: '0.5s' }}
+          />
+
+          <div className="text-center max-w-6xl mx-auto">
+            {/* Banner unfurl animation */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, type: 'spring', stiffness: 50 }}
-              className="mb-8"
+              className="mb-8 relative"
+              variants={bannerUnfurlVariants}
+              initial="initial"
+              animate="animate"
             >
-              <motion.div
-                variants={flameVariants}
-                animate="flicker"
-                className="text-8xl mb-4"
-              >
-                🔥
-              </motion.div>
+              <div className="text-6xl md:text-8xl mb-4">⚔️</div>
+              <div className="absolute -top-4 -left-4 text-4xl opacity-50">🏴</div>
+              <div className="absolute -top-4 -right-4 text-4xl opacity-50 scale-x-[-1]">🏴</div>
             </motion.div>
+
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-ministry mb-6 text-ministry-accent"
+              className="text-4xl md:text-6xl lg:text-7xl font-ministry mb-6 text-accent"
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
             >
-              Serviam:
+              SERVIAM:
               <br />
-              <span className="text-white">I Will Serve</span>
+              <span className="text-white text-shadow-etched">Forge Biblical Masculinity</span>
             </motion.h1>
+
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8"
+              className="text-lg md:text-xl text-parchment max-w-4xl mx-auto mb-8 leading-relaxed"
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.2 }}
             >
-              Biblical masculinity, spiritual warfare, and the call to serve Christ
-              in a world that desperately needs godly men.
+              Stand Firm as Men of God | Christian Podcast & Guidance | @serviamJesus
             </motion.p>
+
+            {/* CTA Section */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8"
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.4 }}
             >
-              <a
-                href="#reflections"
-                className="bg-ministry-accent text-white px-8 py-3 rounded font-semibold hover:bg-ministry-accent/80 transition-colors"
-              >
-                Read Reflections
-              </a>
               <a
                 href="https://youtube.com/@serviamJesus"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-ministry-accent text-ministry-accent px-8 py-3 rounded font-semibold hover:bg-ministry-accent hover:text-white transition-colors"
+                className="bg-accent text-black px-8 py-4 rounded font-bold text-lg hover:bg-accent/80 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                Watch Teachings
+                🔥 Join the Brotherhood
               </a>
+              <div className="text-parchment text-sm opacity-75">
+                "Serviam Ferro" - I serve with iron
+              </div>
+            </motion.div>
+
+            {/* Cross HUD overlay */}
+            <motion.div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20 pointer-events-none"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1, duration: 1 }}
+            >
+              <div className="text-9xl text-accent">✠</div>
             </motion.div>
           </div>
         </section>
 
-        {/* Reflections Section */}
-        <AnimatedSection id="reflections" className="px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12 text-ministry-accent">
-              Spiritual Reflections
-            </h2>
+        {/* Main Content Sections */}
+        <MotivationGrid />
+        <PodcastCarousel />
+        <ChallengesGrid />
+
+        {/* Reflections Ramparts Section */}
+        <section className="px-4 py-20 bg-gradient-to-b from-stone-900/50 to-stone-800/50">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              variants={itemVariants}
+            >
+              <h2 className="text-4xl md:text-5xl font-ministry text-accent mb-4">
+                Reflections Ramparts
+              </h2>
+              <p className="text-xl text-parchment max-w-3xl mx-auto">
+                Scripture-based posts on masculinity, leadership, and spiritual warfare.
+              </p>
+            </motion.div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {reflections.map((reflection, index) => (
-                <motion.article
-                  key={reflection.title}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className="bg-surface p-6 rounded-lg border border-ministry-accent/30 hover:border-ministry-accent transition-colors"
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-semibold text-white hover:text-ministry-accent transition-colors cursor-pointer">
-                      {reflection.title}
-                    </h3>
-                    <span className="text-ministry-secondary text-sm font-bold">
-                      {reflection.scripture}
-                    </span>
-                  </div>
-                  <p className="text-gray-300 mb-4">{reflection.excerpt}</p>
-                  <div className="flex justify-between items-center text-sm text-gray-400">
-                    <span>{new Date(reflection.date).toLocaleDateString()}</span>
-                    <span className="text-ministry-accent hover:text-white transition-colors cursor-pointer">
-                      Read More →
-                    </span>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-            <div className="text-center mt-12">
-              <a
-                href="/blog"
-                className="text-ministry-accent hover:text-white transition-colors"
+              <motion.article
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 hover:border-accent transition-all duration-300"
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
               >
-                View All Reflections →
-              </a>
+                <h3 className="text-2xl font-ministry text-accent mb-4">
+                  Iron Sharpening Iron: Brotherhood in Chaos
+                </h3>
+                <p className="text-parchment mb-6 leading-relaxed">
+                  In a world that isolates men and turns them against each other, biblical brotherhood
+                  becomes our fortress. Discover how true friendship in Christ creates unbreakable bonds.
+                </p>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-accent font-semibold">Proverbs 27:17</span>
+                  <span className="text-parchment/70">Read More →</span>
+                </div>
+              </motion.article>
+
+              <motion.article
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 hover:border-accent transition-all duration-300"
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h3 className="text-2xl font-ministry text-accent mb-4">
+                  From The Iron Legion to Serviam: My Journey
+                </h3>
+                <p className="text-parchment mb-6 leading-relaxed">
+                  From military service to serving Christ with iron resolve. A testimony of transformation
+                  through faith, discipline, and the call to biblical masculinity.
+                </p>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-accent font-semibold">Romans 12:1-2</span>
+                  <span className="text-parchment/70">Read More →</span>
+                </div>
+              </motion.article>
             </div>
           </div>
-        </AnimatedSection>
+        </section>
 
-        {/* Challenges Section */}
-        <AnimatedSection className="px-4 bg-surface/50">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12 text-ministry-accent">
-              Spiritual Challenges
-            </h2>
+        {/* Media Keep Section */}
+        <section className="px-4 py-20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              variants={itemVariants}
+            >
+              <h2 className="text-4xl md:text-5xl font-ministry text-accent mb-4">
+                Media Keep
+              </h2>
+              <p className="text-xl text-parchment max-w-3xl mx-auto">
+                YouTube channel, podcast episodes, and community resources.
+              </p>
+            </motion.div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {challenges.map((challenge, index) => (
-                <motion.div
-                  key={challenge.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className="bg-surface p-6 rounded-lg border border-ministry-accent/30 hover:border-ministry-accent transition-colors text-center"
+              <motion.div
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 text-center"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-6xl mb-4">📺</div>
+                <h3 className="text-2xl font-ministry text-accent mb-4">YouTube Channel</h3>
+                <p className="text-parchment mb-6">
+                  Weekly teachings on biblical masculinity, current events analysis, and spiritual guidance.
+                </p>
+                <a
+                  href="https://youtube.com/@serviamJesus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-accent text-black px-6 py-3 rounded font-bold hover:bg-accent/80 transition-colors inline-block"
                 >
-                  <h3 className="text-xl font-semibold mb-3 text-ministry-accent">
-                    {challenge.title}
-                  </h3>
-                  <p className="text-gray-300 mb-4">{challenge.description}</p>
-                  <div className="space-y-2 text-sm text-gray-400 mb-4">
-                    <p>⏱️ {challenge.duration}</p>
-                    <p>📊 {challenge.difficulty}</p>
-                  </div>
-                  <button className="bg-ministry-accent text-white px-6 py-2 rounded font-semibold hover:bg-ministry-accent/80 transition-colors">
-                    Join Challenge
-                  </button>
-                </motion.div>
-              ))}
+                  Subscribe Now
+                </a>
+              </motion.div>
+
+              <motion.div
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 text-center"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-6xl mb-4">🎧</div>
+                <h3 className="text-2xl font-ministry text-accent mb-4">Podcast Episodes</h3>
+                <p className="text-parchment mb-6">
+                  In-depth discussions on faith, leadership, and standing firm in a challenging world.
+                </p>
+                <a
+                  href="#"
+                  className="bg-accent text-black px-6 py-3 rounded font-bold hover:bg-accent/80 transition-colors inline-block"
+                >
+                  Listen Now
+                </a>
+              </motion.div>
+
+              <motion.div
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 text-center"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-6xl mb-4">🤝</div>
+                <h3 className="text-2xl font-ministry text-accent mb-4">Community</h3>
+                <p className="text-parchment mb-6">
+                  Join the brotherhood. Connect with like-minded men pursuing biblical masculinity.
+                </p>
+                <a
+                  href="#"
+                  className="bg-accent text-black px-6 py-3 rounded font-bold hover:bg-accent/80 transition-colors inline-block"
+                >
+                  Join Community
+                </a>
+              </motion.div>
             </div>
           </div>
-        </AnimatedSection>
+        </section>
 
-        {/* Media Section */}
-        <AnimatedSection className="px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12 text-ministry-accent">
-              Recent Teachings
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {media.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className="bg-surface rounded-lg overflow-hidden border border-ministry-accent/30 hover:border-ministry-accent transition-colors group"
-                >
-                  <div className="relative aspect-video bg-gray-800">
-                    {/* Placeholder for media thumbnail */}
-                    <div className="absolute inset-0 flex items-center justify-center text-ministry-accent/50">
-                      <span className="text-4xl">⚔️</span>
-                    </div>
-                    <div className="absolute top-2 left-2 bg-ministry-secondary text-black px-2 py-1 rounded text-xs font-bold">
-                      {item.type}
-                    </div>
-                    <div className="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded text-sm">
-                      {item.duration}
-                    </div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                      <span className="text-3xl text-white">▶️</span>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold mb-2 text-white group-hover:text-ministry-accent transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-300 text-sm mb-3">{item.description}</p>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-ministry-accent hover:text-white transition-colors text-sm"
-                    >
-                      Watch Now →
-                    </a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="text-center mt-12">
+        {/* Enlist CTA Section */}
+        <section className="px-4 py-20 bg-gradient-to-r from-crimson/20 via-accent/10 to-crimson/20">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              variants={itemVariants}
+              className="mb-8"
+            >
+              <h2 className="text-4xl md:text-5xl font-ministry text-accent mb-6">
+                Serve with Iron
+              </h2>
+              <p className="text-xl text-parchment mb-8">
+                Join thousands of men forging biblical masculinity. Subscribe, share, and stand firm.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-6 justify-center mb-8"
+              variants={itemVariants}
+            >
               <a
                 href="https://youtube.com/@serviamJesus"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-ministry-accent text-white px-8 py-3 rounded font-semibold hover:bg-ministry-accent/80 transition-colors inline-block"
+                className="bg-accent text-black px-8 py-4 rounded font-bold text-lg hover:bg-accent/80 transition-all duration-300 shadow-lg"
               >
-                View All Teachings
+                📺 YouTube Subscribe
               </a>
-            </div>
+              <a
+                href="#"
+                className="bg-crimson text-white px-8 py-4 rounded font-bold text-lg hover:bg-crimson/80 transition-all duration-300 shadow-lg"
+              >
+                🎧 Podcast Subscribe
+              </a>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="text-parchment/80"
+            >
+              <p className="mb-4">Thank you for your support and prayers.</p>
+              <p className="text-accent font-ministry text-lg">
+                "Be strong and courageous. Do not be afraid; do not be discouraged,
+                for the Lord your God will be with you wherever you go."
+              </p>
+              <p className="text-parchment mt-2">— Joshua 1:9</p>
+            </motion.div>
           </div>
-        </AnimatedSection>
+        </section>
       </div>
     </div>
   );

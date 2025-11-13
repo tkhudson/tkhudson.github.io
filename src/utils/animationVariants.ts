@@ -177,3 +177,102 @@ export const ammoCounterVariants: Variants = {
     },
   },
 };
+
+// Crusader-themed animations
+export const bannerUnfurlVariants: Variants = {
+  initial: {
+    scaleX: 0,
+    opacity: 0,
+  },
+  animate: {
+    scaleX: 1,
+    opacity: 1,
+    transition: {
+      duration: 1.2,
+      ease: 'easeOut',
+    },
+  },
+};
+
+export const torchIgniteVariants: Variants = {
+  ignite: {
+    opacity: [0, 0.8, 1, 0.9, 1],
+    scale: [0.8, 1.1, 1, 1.05, 1],
+    filter: [
+      'brightness(0.5) hue-rotate(0deg)',
+      'brightness(1.5) hue-rotate(30deg)',
+      'brightness(1) hue-rotate(0deg)',
+      'brightness(1.2) hue-rotate(15deg)',
+      'brightness(1) hue-rotate(0deg)',
+    ],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+export const swordDrawVariants: Variants = {
+  initial: {
+    x: -100,
+    opacity: 0,
+    rotate: -45,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut',
+    },
+  },
+};
+
+export const armorClankVariants: Variants = {
+  hover: {
+    scale: [1, 1.02, 1],
+    transition: {
+      duration: 0.3,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+export const crimsonGlowVariants: Variants = {
+  glow: {
+    boxShadow: [
+      '0 0 5px rgba(155, 29, 29, 0.3)',
+      '0 0 20px rgba(155, 29, 29, 0.6)',
+      '0 0 5px rgba(155, 29, 29, 0.3)',
+    ],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+export const stoneParallaxVariants: Variants = {
+  parallax: {
+    y: [0, -20, 0],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+export const heraldicRotateVariants: Variants = {
+  rotate: {
+    rotate: [0, 5, -5, 0],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+};
