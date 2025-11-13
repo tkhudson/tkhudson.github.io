@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { motion } from 'framer-motion';
@@ -162,27 +162,29 @@ const Articles = ({ selectedArticle, onArticleSelect }: ArticlesProps) => {
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
-                h1: (props) => <h1 className="text-2xl font-bold text-tech-accent mb-4" {...props} />,
-                h2: (props) => <h2 className="text-xl font-bold text-tech-accent mb-3" {...props} />,
-                h3: (props) => <h3 className="text-lg font-bold text-tech-accent mb-2" {...props} />,
-                p: (props) => <p className="text-gray-300 mb-4 leading-relaxed" {...props} />,
-                ul: (props) => <ul className="text-gray-300 mb-4 ml-6 list-disc" {...props} />,
-                ol: (props) => <ol className="text-gray-300 mb-4 ml-6 list-decimal" {...props} />,
-                li: (props) => <li className="mb-2" {...props} />,
-                code: (props) => <code className="bg-black px-2 py-1 rounded text-tech-accent font-mono text-sm" {...props} />,
-                pre: (props) => <pre className="bg-black p-4 rounded mb-4 overflow-x-auto" {...props} />,
-                blockquote: (props) => <blockquote className="border-l-4 border-tech-accent pl-4 italic text-gray-400 mb-4" {...props} />,
-                a: (props) => <a className="text-tech-accent hover:underline" target="_blank" rel="noopener noreferrer" {...props} />,
-                iframe: (props) => (
+                h1: ({ children, ...props }) => <h1 className="text-2xl font-bold text-tech-accent mb-4" {...props}>{children}</h1>,
+                h2: ({ children, ...props }) => <h2 className="text-xl font-bold text-tech-accent mb-3" {...props}>{children}</h2>,
+                h3: ({ children, ...props }) => <h3 className="text-lg font-bold text-tech-accent mb-2" {...props}>{children}</h3>,
+                p: ({ children, ...props }) => <p className="text-gray-300 mb-4 leading-relaxed" {...props}>{children}</p>,
+                ul: ({ children, ...props }) => <ul className="text-gray-300 mb-4 ml-6 list-disc" {...props}>{children}</ul>,
+                ol: ({ children, ...props }) => <ol className="text-gray-300 mb-4 ml-6 list-decimal" {...props}>{children}</ol>,
+                li: ({ children, ...props }) => <li className="mb-2" {...props}>{children}</li>,
+                code: ({ children, ...props }) => <code className="bg-black px-2 py-1 rounded text-tech-accent font-mono text-sm" {...props}>{children}</code>,
+                pre: ({ children, ...props }) => <pre className="bg-black p-4 rounded mb-4 overflow-x-auto" {...props}>{children}</pre>,
+                blockquote: ({ children, ...props }) => <blockquote className="border-l-4 border-tech-accent pl-4 italic text-gray-400 mb-4" {...props}>{children}</blockquote>,
+                a: ({ children, href, ...props }) => <a className="text-tech-accent hover:underline" target="_blank" rel="noopener noreferrer" href={href} {...props}>{children}</a>,
+                iframe: ({ src, title, ...props }) => (
                   <div className="my-6">
                     <iframe
                       className="w-full max-w-2xl mx-auto rounded"
                       height="315"
+                      src={src}
+                      title={title}
                       {...props}
                     />
                   </div>
                 )
-              } as any}
+              }}
             >
               {article.content}
             </ReactMarkdown>

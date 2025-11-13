@@ -71,7 +71,7 @@ const MotivationGrid = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {videos.map((video, index) => (
+          {videos.map((video) => (
             <motion.div key={video.videoId} variants={itemVariants}>
               <CrusaderCard
                 title={video.title}

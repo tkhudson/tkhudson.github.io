@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
 import DustParticles from '../components/DustParticles';
 import SurvivalVideoGrid from '../components/SurvivalVideoGrid';
 import ShooterCarousel from '../components/ShooterCarousel';
@@ -9,7 +8,6 @@ import AnimatedSection from '../components/AnimatedSection';
 import { dustCloudVariants, shrapnelVariants, holographicVariants } from '../utils/animationVariants';
 
 const Persevus = () => {
-  const location = useLocation();
 
   useEffect(() => {
     // Apply theme class to body

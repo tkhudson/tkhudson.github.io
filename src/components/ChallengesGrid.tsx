@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
-import { containerVariants, itemVariants, crimsonGlowVariants } from '../utils/animationVariants';
+import { containerVariants, itemVariants } from '../utils/animationVariants';
 
 interface Challenge {
   title: string;
@@ -94,7 +94,7 @@ const ChallengesGrid = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {challenges.map((challenge, index) => (
+          {challenges.map((challenge) => (
             <motion.div
               key={challenge.title}
               variants={itemVariants}

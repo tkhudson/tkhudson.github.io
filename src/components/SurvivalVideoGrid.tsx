@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import BattlefieldCard from './BattlefieldCard';
 import { containerVariants, itemVariants } from '../utils/animationVariants';
@@ -23,7 +23,7 @@ const SurvivalVideoGrid = ({ videos }: SurvivalVideoGridProps) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
     >
-      {videos.map((video, index) => (
+      {videos.map((video) => (
         <motion.div key={video.videoId} variants={itemVariants}>
           <BattlefieldCard
             title={video.title}
