@@ -238,7 +238,9 @@ const Serviam = () => {
                   In-depth discussions on faith, leadership, and standing firm in a challenging world.
                 </p>
                 <a
-                  href="#"
+                  href="https://podbean.com/serviamjesus"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-accent text-black px-6 py-3 rounded font-bold hover:bg-accent/80 transition-colors inline-block"
                 >
                   Listen Now
@@ -256,7 +258,9 @@ const Serviam = () => {
                   Join the brotherhood. Connect with like-minded men pursuing biblical masculinity.
                 </p>
                 <a
-                  href="#"
+                  href="https://discord.gg/serviamjesus"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-accent text-black px-6 py-3 rounded font-bold hover:bg-accent/80 transition-colors inline-block"
                 >
                   Join Community
@@ -294,7 +298,9 @@ const Serviam = () => {
                 📺 YouTube Subscribe
               </a>
               <a
-                href="#"
+                href="https://podbean.com/serviamjesus"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-crimson text-white px-8 py-4 rounded font-bold text-lg hover:bg-crimson/80 transition-all duration-300 shadow-lg"
               >
                 🎧 Podcast Subscribe

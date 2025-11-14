@@ -139,14 +139,19 @@ const Tyler = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a
-                href="#experience"
+              <button
+                onClick={() => {
+                  const experienceSection = document.getElementById('experience');
+                  if (experienceSection) {
+                    experienceSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="bg-tech-accent text-black px-8 py-3 rounded font-semibold hover:bg-tech-accent/80 transition-colors"
               >
                 View Experience
-              </a>
+              </button>
               <a
-                href="/assets/tyler_resume.pdf"
+                href="/assets/thudson_resume2025.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-tech-accent text-tech-accent px-8 py-3 rounded font-semibold hover:bg-tech-accent hover:text-black transition-colors"
@@ -293,7 +298,7 @@ const Tyler = () => {
                 Download my comprehensive resume with detailed work history, technical skills, and professional achievements.
               </p>
               <a
-                href="/assets/tyler_resume.pdf"
+                href="/assets/thudson_resume2025.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-tech-accent text-black px-8 py-3 rounded font-semibold hover:bg-tech-accent/80 transition-colors"

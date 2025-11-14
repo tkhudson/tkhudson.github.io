@@ -521,7 +521,9 @@ const Persevus = () => {
                 Ready to survive the apocalypse? Join our Discord community for discussions, giveaways, and exclusive content.
               </p>
               <a
-                href="#"
+                href="https://discord.gg/persevus"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block mt-4 bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-lg font-gaming text-sm transition-all duration-300 hover:scale-105"
               >
                 Join Discord Server
