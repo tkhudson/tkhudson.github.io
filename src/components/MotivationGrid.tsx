@@ -8,43 +8,31 @@ const MotivationGrid = () => {
     {
       title: "Defy the World's Drift | Biblical Motivation",
       videoId: "vZft9YxDLts",
-      views: "2.1K views",
-      date: "3 days ago",
       description: "Stand firm against cultural currents that pull you away from God's truth."
     },
     {
       title: "The Sacrifice of True Manhood",
       videoId: "placeholder1",
-      views: "1.8K views",
-      date: "1 week ago",
       description: "Embrace the cross-bearing life that defines authentic masculinity."
     },
     {
       title: "Mastering Anger as a Man of Faith",
       videoId: "placeholder2",
-      views: "3.2K views",
-      date: "2 weeks ago",
       description: "Transform destructive anger into righteous indignation through Christ."
     },
     {
       title: "The Strength of Silent Prayer",
       videoId: "placeholder3",
-      views: "1.5K views",
-      date: "3 weeks ago",
       description: "Discover the power of prayer in the quiet battles of life."
     },
     {
       title: "Fatherhood: Legacy of Faith",
       videoId: "placeholder4",
-      views: "2.7K views",
-      date: "1 month ago",
       description: "Raise warriors for Christ in an age of confusion."
     },
     {
       title: "Abstinence: The Warrior's Discipline",
       videoId: "placeholder5",
-      views: "4.1K views",
-      date: "6 weeks ago",
       description: "Master your body and mind through biblical purity."
     }
   ];
@@ -76,8 +64,6 @@ const MotivationGrid = () => {
               <CrusaderCard
                 title={video.title}
                 videoId={video.videoId}
-                views={video.views}
-                date={video.date}
                 description={video.description}
               />
             </motion.div>

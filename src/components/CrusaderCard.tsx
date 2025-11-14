@@ -79,10 +79,6 @@ const CrusaderCard = ({
           {description && (
             <p className="text-gray-300 text-sm mb-3 line-clamp-2">{description}</p>
           )}
-          <div className="flex justify-between items-center text-xs text-gray-400">
-            <span>{views}</span>
-            <span>{date}</span>
-          </div>
         </div>
       </motion.div>
 

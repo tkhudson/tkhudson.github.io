@@ -206,7 +206,7 @@ const Serviam = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <motion.div
                 className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 text-center"
                 variants={itemVariants}
@@ -238,12 +238,32 @@ const Serviam = () => {
                   In-depth discussions on faith, leadership, and standing firm in a challenging world.
                 </p>
                 <a
-                  href="https://podbean.com/serviamjesus"
+                  href="https://serviam.podbean.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-accent text-black px-6 py-3 rounded font-bold hover:bg-accent/80 transition-colors inline-block"
                 >
                   Listen Now
+                </a>
+              </motion.div>
+
+              <motion.div
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 text-center"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-6xl mb-4">📖</div>
+                <h3 className="text-2xl font-ministry text-accent mb-4">Biblical Motivation</h3>
+                <p className="text-parchment mb-6">
+                  Scripture-based motivation and inspiration for men of faith.
+                </p>
+                <a
+                  href="https://www.youtube.com/playlist?list=PLRFUyLVp9C5yVF35TxQdPmh-FZzt6JafZ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-accent text-black px-6 py-3 rounded font-bold hover:bg-accent/80 transition-colors inline-block"
+                >
+                  Watch Playlist
                 </a>
               </motion.div>
 
@@ -298,10 +318,10 @@ const Serviam = () => {
                 📺 YouTube Subscribe
               </a>
               <a
-                href="https://podbean.com/serviamjesus"
+                href="https://serviam.podbean.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-crimson text-white px-8 py-4 rounded font-bold text-lg hover:bg-crimson/80 transition-all duration-300 shadow-lg"
+                className="bg-accent text-black px-8 py-4 rounded font-bold text-lg hover:bg-accent/80 transition-all duration-300 shadow-lg"
               >
                 🎧 Podcast Subscribe
               </a>
