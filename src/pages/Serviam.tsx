@@ -110,7 +110,7 @@ const Serviam = () => {
                 href="https://youtube.com/@serviamJesus"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent text-black px-8 py-4 rounded font-bold text-lg hover:bg-accent/80 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="bg-white text-black px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 🔥 Join the Brotherhood
               </a>
@@ -135,6 +135,69 @@ const Serviam = () => {
         <MotivationGrid />
         <PodcastCarousel />
         <ChallengesGrid />
+
+        {/* Biblical Motivation Podcast Section */}
+        <section className="px-4 py-20 bg-gradient-to-b from-stone-800/30 to-stone-900/30">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              variants={itemVariants}
+            >
+              <h2 className="text-4xl md:text-5xl font-ministry text-accent mb-4">
+                Biblical Motivation Podcast
+              </h2>
+              <p className="text-xl text-parchment max-w-3xl mx-auto mb-8">
+                Scripture-based motivation and inspiration for men of faith. A dedicated series focusing on biblical principles for daily living.
+              </p>
+              <a
+                href="https://www.youtube.com/playlist?list=PLRFUyLVp9C5yVF35TxQdPmh-FZzt6JafZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent text-black px-8 py-4 rounded font-bold text-lg hover:bg-accent/80 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
+              >
+                🎧 Listen to Biblical Motivation Series
+              </a>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-6 rounded-lg border-2 border-accent/30 text-center"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-4xl mb-4">📖</div>
+                <h3 className="text-xl font-ministry text-accent mb-3">Scripture Focus</h3>
+                <p className="text-parchment text-sm">
+                  Each episode centers on key biblical passages that speak to God's design for masculinity.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-6 rounded-lg border-2 border-accent/30 text-center"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-4xl mb-4">⚔️</div>
+                <h3 className="text-xl font-ministry text-accent mb-3">Practical Application</h3>
+                <p className="text-parchment text-sm">
+                  Biblical principles applied to modern challenges and daily Christian living.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="bg-gradient-to-br from-stone-800 to-stone-900 p-6 rounded-lg border-2 border-accent/30 text-center"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-4xl mb-4">🔥</div>
+                <h3 className="text-xl font-ministry text-accent mb-3">Spiritual Fire</h3>
+                <p className="text-parchment text-sm">
+                  Ignite your faith and strengthen your resolve to live as Christ commanded.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
         {/* Reflections Ramparts Section */}
         <section className="px-4 py-20 bg-gradient-to-b from-stone-900/50 to-stone-800/50">

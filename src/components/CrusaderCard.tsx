@@ -5,8 +5,6 @@ import { armorClankVariants } from '../utils/animationVariants';
 interface CrusaderCardProps {
   title: string;
   videoId: string;
-  views?: string;
-  date?: string;
   description?: string;
   thumbnailUrl?: string;
 }
@@ -14,8 +12,6 @@ interface CrusaderCardProps {
 const CrusaderCard = ({
   title,
   videoId,
-  views = '1.2K views',
-  date = '2 days ago',
   description,
   thumbnailUrl
 }: CrusaderCardProps) => {
