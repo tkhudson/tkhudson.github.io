@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import GlitchText from '../components/GlitchText';
 import Articles from '../components/Articles';
@@ -107,6 +108,15 @@ const Tyler = () => {
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300FF41' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}></div>
       </div>
+
+      {/* Back to Portal Button */}
+      <Link
+        to="/"
+        className="fixed top-4 left-4 z-50 bg-tech-accent/90 text-black px-4 py-2 rounded font-semibold hover:bg-tech-accent transition-colors backdrop-blur-sm"
+        aria-label="Back to Portal"
+      >
+        ← Back to Portal
+      </Link>
 
       <div className="relative z-10 pt-20">
         {/* Hero Section */}

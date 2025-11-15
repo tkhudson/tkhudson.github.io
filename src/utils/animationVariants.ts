@@ -1,49 +1,48 @@
 import { Variants } from 'framer-motion';
 
-// Page transition variants
+// Page transition variants (optimized for performance)
 export const pageVariants: Variants = {
   initial: {
     opacity: 0,
-    scale: 0.95,
-    filter: 'blur(10px)',
+    y: 20,
   },
   in: {
     opacity: 1,
-    scale: 1,
-    filter: 'blur(0px)',
+    y: 0,
   },
   out: {
     opacity: 0,
-    scale: 1.05,
-    filter: 'blur(5px)',
+    y: -20,
   },
 };
 
 export const pageTransition = {
   type: 'tween',
-  ease: 'anticipate',
-  duration: 0.5,
+  ease: 'easeInOut',
+  duration: 0.3,
 };
 
-// Stagger animations for lists
+// Stagger animations for lists (reduced complexity)
 export const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
     },
   },
 };
 
 export const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
-      stiffness: 100,
+      type: 'tween',
+      duration: 0.3,
+      ease: 'easeOut',
     },
   },
 };

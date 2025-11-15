@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import DustParticles from '../components/DustParticles';
 import SurvivalVideoGrid from '../components/SurvivalVideoGrid';
 import ShooterCarousel from '../components/ShooterCarousel';
@@ -80,6 +81,15 @@ const Persevus = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
       {/* Background Effects */}
       <DustParticles />
+
+      {/* Back to Portal Button */}
+      <Link
+        to="/"
+        className="fixed top-4 left-4 z-50 bg-red-600/90 text-white px-4 py-2 rounded font-gaming text-sm hover:bg-red-600 transition-colors backdrop-blur-sm"
+        aria-label="Back to Portal"
+      >
+        ← Back to Portal
+      </Link>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import MotivationGrid from '../components/MotivationGrid';
 import PodcastCarousel from '../components/PodcastCarousel';
 import ChallengesGrid from '../components/ChallengesGrid';
@@ -47,6 +47,15 @@ const Serviam = () => {
           </div>
         </div>
       </div>
+
+      {/* Back to Portal Button */}
+      <Link
+        to="/"
+        className="fixed top-4 left-4 z-50 bg-accent text-black px-4 py-2 rounded font-bold hover:bg-accent/80 transition-colors backdrop-blur-sm"
+        aria-label="Back to Portal"
+      >
+        ← Back to Portal
+      </Link>
 
       <div className="relative z-10">
         {/* Hero Section */}
