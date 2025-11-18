@@ -18,6 +18,9 @@ interface ArticlesProps {
   onArticleSelect?: (slug: string) => void;
 }
 
+// Dynamically import all tech posts
+const techPosts = import.meta.glob('./../posts/tech/*.markdown', { query: '?raw', import: 'default', eager: true });
+
 const Articles = ({ selectedArticle, onArticleSelect }: ArticlesProps) => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
@@ -25,29 +28,15 @@ const Articles = ({ selectedArticle, onArticleSelect }: ArticlesProps) => {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        // Get all markdown files from posts directory
-        const postFiles = [
-          '2023-11-08-Hello-World.markdown',
-          '2024-02-09-Flask-web-app-devops.markdown',
-          '2024-02-09-new-project.markdown',
-          '2024-02-13-Deploying-linux-vm-with-terraform.markdown',
-          '2024-02-16-Provision-linux-server-for-flask-webapp.markdown',
-          '2024-02-22-Steps-for-stag-and-prod copy.markdown',
-          '2024-04-05-flask-project-rock-paper-scissors.markdown',
-          '2024-04-05-game-dev-studio.markdown',
-          '2024-08-21-deploying-secure-message-app.markdown',
-          '2024-09-03-dadjoke-provider.markdown'
-        ];
-
         const loadedArticles: Article[] = [];
 
-        for (const file of postFiles) {
+        for (const [path, content] of Object.entries(techPosts)) {
+          const file = path.split('/').pop() || '';
           try {
-            const response = await fetch(`/src/posts/${file}`);
-            const content = await response.text();
+            const contentStr = content as string;
 
             // Parse frontmatter
-            const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+            const frontmatterMatch = contentStr.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
             if (frontmatterMatch) {
               const frontmatter = frontmatterMatch[1];
               const markdownContent = frontmatterMatch[2];
@@ -62,7 +51,7 @@ const Articles = ({ selectedArticle, onArticleSelect }: ArticlesProps) => {
               const title = titleMatch ? titleMatch[1] : file.replace('.markdown', '').replace(/-/g, ' ');
               const date = dateMatch ? dateMatch[1] : '2024-01-01';
               const description = descriptionMatch ? descriptionMatch[1] : '';
-              const tags = tagsMatch ? tagsMatch[1].split('\n').map(tag => tag.replace(/^\s*-\s*/, '').trim()).filter(tag => tag) : [];
+              const tags = tagsMatch ? tagsMatch[1].split('\n').map((tag: string) => tag.replace(/^\s*-\s*/, '').trim()).filter((tag: string) => tag) : [];
               const category = categoryMatch ? categoryMatch[1].trim() : 'blog';
 
               loadedArticles.push({

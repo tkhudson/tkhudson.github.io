@@ -18,48 +18,64 @@ interface ServiamArticlesProps {
   onArticleSelect?: (slug: string) => void;
 }
 
+// Dynamically import all serviam posts
+const serviamPosts = import.meta.glob('./../posts/serviam/*.md', { query: '?raw', import: 'default', eager: true });
+
 const ServiamArticles = ({ selectedArticle, onArticleSelect }: ServiamArticlesProps) => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadedCount, setLoadedCount] = useState(0);
 
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        // Get all Serviam articles from posts directory
-        const postFiles = [
-          'serviam-2024-01-01-iron-brotherhood.markdown',
-          'serviam-2024-01-15-spiritual-warfare.markdown',
-          'serviam-2024-02-01-biblical-leadership.markdown'
-        ];
-
+        console.log('Serviam posts found:', Object.keys(serviamPosts));
+        console.log('Number of posts:', Object.keys(serviamPosts).length);
         const loadedArticles: Article[] = [];
 
-        for (const file of postFiles) {
+        for (const [path, content] of Object.entries(serviamPosts)) {
+          console.log('Processing file:', path);
+          const file = path.split('/').pop() || '';
           try {
-            const response = await fetch(`/src/posts/${file}`);
-            const content = await response.text();
+            let contentStr = content as string;
+            console.log('Content string length:', contentStr.length);
+            console.log('Content preview:', contentStr.substring(0, 200));
+
+            // Strip UTF-8 BOM if present
+            contentStr = contentStr.replace(/^\ufeff/, '');
 
             // Parse frontmatter
-            const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+            const frontmatterMatch = contentStr.match(/^\s*---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+            console.log('Frontmatter match result:', frontmatterMatch ? 'found' : 'not found');
+            console.log('Full content start:', contentStr.substring(0, 100));
+
             if (frontmatterMatch) {
               const frontmatter = frontmatterMatch[1];
               const markdownContent = frontmatterMatch[2];
+              console.log('Frontmatter content:', frontmatter);
+              console.log('Markdown content start:', markdownContent.substring(0, 100));
 
               // Extract metadata
-              const titleMatch = frontmatter.match(/title:\s*"([^"]+)"/);
+              const titleMatch = frontmatter.match(/title:\s*"([^"]+)"|title:\s*([^\n]+)/);
               const dateMatch = frontmatter.match(/date:\s*(\d{4}-\d{2}-\d{2})/);
-              const descriptionMatch = frontmatter.match(/description:\s*"([^"]+)"/);
+              const descriptionMatch = frontmatter.match(/description:\s*"([^"]+)"|description:\s*([^\n]+)/);
               const tagsMatch = frontmatter.match(/tag:\s*\n((?:\s*-\s*[^\n]+\n?)*)/);
               const categoryMatch = frontmatter.match(/category:\s*([^\n]+)/);
 
-              const title = titleMatch ? titleMatch[1] : file.replace('.markdown', '').replace(/-/g, ' ');
+              console.log('Title match:', titleMatch);
+              console.log('Date match:', dateMatch);
+              console.log('Description match:', descriptionMatch);
+              console.log('Tags match:', tagsMatch);
+              console.log('Category match:', categoryMatch);
+
+              const title = titleMatch ? (titleMatch[1] || titleMatch[2]) : file.replace('.md', '').replace(/-/g, ' ');
               const date = dateMatch ? dateMatch[1] : '2024-01-01';
-              const description = descriptionMatch ? descriptionMatch[1] : '';
+              const description = descriptionMatch ? (descriptionMatch[1] || descriptionMatch[2]) : '';
               const tags = tagsMatch ? tagsMatch[1].split('\n').map(tag => tag.replace(/^\s*-\s*/, '').trim()).filter(tag => tag) : [];
               const category = categoryMatch ? categoryMatch[1].trim() : 'reflections';
 
               loadedArticles.push({
-                slug: file.replace('.markdown', ''),
+                slug: file.replace('.md', ''),
                 title,
                 date,
                 description,
@@ -75,6 +91,7 @@ const ServiamArticles = ({ selectedArticle, onArticleSelect }: ServiamArticlesPr
 
         // Sort by date (newest first)
         loadedArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        setLoadedCount(loadedArticles.length);
         setArticles(loadedArticles);
       } catch (error) {
         console.error('Failed to load articles:', error);
@@ -237,7 +254,7 @@ const ServiamArticles = ({ selectedArticle, onArticleSelect }: ServiamArticlesPr
 
       {articles.length === 0 && (
         <div className="text-center py-12">
-          <div className="text-parchment/70">No reflections found</div>
+          <div className="text-parchment/70">No reflections found. Posts found: {Object.keys(serviamPosts).length}, loaded: {loadedCount}</div>
         </div>
       )}
     </div>
