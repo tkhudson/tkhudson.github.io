@@ -1,11 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import MotivationGrid from '../components/MotivationGrid';
+import ServiamArticles from '../components/ServiamArticles';
 import { bannerUnfurlVariants, torchIgniteVariants, itemVariants, stoneParallaxVariants } from '../utils/animationVariants';
 
 const Serviam = () => {
   const location = useLocation();
+  const [selectedArticle, setSelectedArticle] = useState<string>('');
 
   useEffect(() => {
     // Apply theme class to body for global styling
@@ -186,15 +188,23 @@ const Serviam = () => {
               <p className="text-xl text-parchment max-w-3xl mx-auto mb-8">
                 Scripture-based motivation and inspiration for men of faith. A dedicated series focusing on biblical principles for daily living.
               </p>
-              <a
-                href="https://www.youtube.com/playlist?list=PLRFUyLVp9C5yVF35TxQdPmh-FZzt6JafZ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-accent text-black px-8 py-4 rounded font-bold text-lg hover:bg-accent/80 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
-              >
-                🎧 Listen to Biblical Motivation Series
-              </a>
             </motion.div>
+
+            <div className="flex justify-center mb-12">
+              <div className="w-full max-w-4xl aspect-video">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/videoseries?si=UearQGLLzX778VCB&list=PLRFUyLVp9C5yVF35TxQdPmh-FZzt6JafZ"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="w-full h-full rounded-lg border-2 border-accent/30"
+                ></iframe>
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
@@ -251,43 +261,10 @@ const Serviam = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.article
-                className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 hover:border-accent transition-all duration-300"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-              >
-                <h3 className="text-2xl font-ministry text-accent mb-4">
-                  Iron Sharpening Iron: Brotherhood in Chaos
-                </h3>
-                <p className="text-parchment mb-6 leading-relaxed">
-                  In a world that isolates men and turns them against each other, biblical brotherhood
-                  becomes our fortress. Discover how true friendship in Christ creates unbreakable bonds.
-                </p>
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-accent font-semibold">Proverbs 27:17</span>
-                  <span className="text-parchment/70">Read More →</span>
-                </div>
-              </motion.article>
-
-              <motion.article
-                className="bg-gradient-to-br from-stone-800 to-stone-900 p-8 rounded-lg border-2 border-accent/30 hover:border-accent transition-all duration-300"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-              >
-                <h3 className="text-2xl font-ministry text-accent mb-4">
-                  From The Iron Legion to Serviam: My Journey
-                </h3>
-                <p className="text-parchment mb-6 leading-relaxed">
-                  From military service to serving Christ with iron resolve. A testimony of transformation
-                  through faith, discipline, and the call to biblical masculinity.
-                </p>
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-accent font-semibold">Romans 12:1-2</span>
-                  <span className="text-parchment/70">Read More →</span>
-                </div>
-              </motion.article>
-            </div>
+            <ServiamArticles
+              selectedArticle={selectedArticle}
+              onArticleSelect={setSelectedArticle}
+            />
           </div>
         </section>
 
