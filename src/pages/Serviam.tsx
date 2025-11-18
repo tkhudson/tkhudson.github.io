@@ -2,8 +2,6 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import MotivationGrid from '../components/MotivationGrid';
-import PodcastCarousel from '../components/PodcastCarousel';
-import ChallengesGrid from '../components/ChallengesGrid';
 import { bannerUnfurlVariants, torchIgniteVariants, itemVariants, stoneParallaxVariants } from '../utils/animationVariants';
 
 const Serviam = () => {
@@ -142,8 +140,38 @@ const Serviam = () => {
 
         {/* Main Content Sections */}
         <MotivationGrid />
-        <PodcastCarousel />
-        <ChallengesGrid />
+        {/* Podcast Bastion */}
+        <section className="px-4 py-20 bg-gradient-to-b from-stone-800/30 to-stone-900/30">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              variants={itemVariants}
+            >
+              <h2 className="text-4xl md:text-5xl font-ministry text-accent mb-4">
+                Podcast Bastion
+              </h2>
+              <p className="text-xl text-parchment max-w-3xl mx-auto mb-8">
+                Latest podcast episodes from Serviam. Biblical motivation and guidance for men of faith.
+              </p>
+            </motion.div>
+
+            <div className="flex justify-center">
+              <div className="w-full max-w-4xl aspect-video">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/videoseries?si=GtAMk8XukFmEeoj3&list=PLRFUyLVp9C5ynd_nUbUbwwWrEMsnvI5IH"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="w-full h-full rounded-lg border-2 border-accent/30"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Biblical Motivation Podcast Section */}
         <section className="px-4 py-20 bg-gradient-to-b from-stone-800/30 to-stone-900/30">
